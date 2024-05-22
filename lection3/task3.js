@@ -1,8 +1,8 @@
 "use strict";
 
 function concatenated(n) {
-    let stringAnswer, numberToString;
-    numberToString = n.toString();
+    let stringAnswer;
+    const numberToString = n.toString();
     stringAnswer = n + Number(numberToString + numberToString) + Number(numberToString + numberToString + numberToString);
 
     return stringAnswer;
