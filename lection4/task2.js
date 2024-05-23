@@ -9,7 +9,7 @@ if (typeof age_1 === 'string') {
 }
 
 switch (true) {
-  case age_1 < age_2: {
+  case age_1 < age_2 && age_1 > 0: {
     console.log('You don’t have access cause your age is ' + age_1 + '. It’s less then ' + age_2);
     break;
   }
@@ -17,7 +17,7 @@ switch (true) {
     console.log('Welcome!');
     break;
   }
-  case age_1 >= age_3: {
+  case age_1 >= age_3 && age_1 <= 127: {
     console.log('Keep calm and look Culture channel');
     break;
   }
