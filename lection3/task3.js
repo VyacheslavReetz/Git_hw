@@ -1,6 +1,7 @@
 "use strict";
 
 function concatenated(n) {
+    n = Number(n);
     let stringAnswer;
     const numberToString = n.toString();
     stringAnswer = n + Number(numberToString + numberToString) + Number(numberToString + numberToString + numberToString);
