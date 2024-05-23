@@ -1,7 +1,7 @@
 "use strict";
 
 function concatenated(n) {
-    n = Number(n);
+    n = Number(n); // Для ввода через консоль ¯⁠\⁠_⁠(⁠ツ⁠)⁠_⁠/⁠¯
     let stringAnswer;
     const numberToString = n.toString();
     stringAnswer = n + Number(numberToString + numberToString) + Number(numberToString + numberToString + numberToString);
