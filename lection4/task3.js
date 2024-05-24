@@ -5,7 +5,7 @@ const age_2 = 18;
 const age_3 = 60;
 
 // null для случая когда нажали "Отмена"
-if (typeof age_1 === 'string' || age_1 === null) {
+if (typeof age_1 === 'string' || age_1 === null && !isNaN(+age_1)) {
     age_1 = +age_1;
 }
 
