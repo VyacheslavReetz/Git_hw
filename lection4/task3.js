@@ -18,7 +18,7 @@ switch (true) {
     alert('Welcome!');
     break;
   }
-  case age_1 >= age_3 && age_1 <= 127: {
+  case age_1 >= age_3: {
     alert('Keep calm and look Culture channel');
     break;
   }

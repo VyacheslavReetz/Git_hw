@@ -1,10 +1,10 @@
 "use strict";
 
-let age_1 = '12';
+let age_1 = 'dsa';
 const age_2 = 18;
 const age_3 = 60;
 
-if (typeof age_1 === 'string') {
+if (typeof age_1 === 'string' && !isNaN(+age_1)) {
     age_1 = +age_1;
 }
 
@@ -17,7 +17,7 @@ switch (true) {
     console.log('Welcome!');
     break;
   }
-  case age_1 >= age_3 && age_1 <= 127: {
+  case age_1 >= age_3: {
     console.log('Keep calm and look Culture channel');
     break;
   }
