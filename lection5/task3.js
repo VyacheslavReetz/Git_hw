@@ -22,10 +22,9 @@ console.log(`word ${str} contains ${vowels} vowels and ${consonants} consonants`
 //   Например let str = 'AbC'; let offset = -1, result = 'ZaB';
 //   Например let str = 'ZzZ'; let offset = 1, result = 'AaA';
 
-const string = 'ZzZ';
-const offset = 1;
+const string = 'AbC';
+const offset = -1;
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-let newIndex = 0;
 let result = '';
 
 for (let char of string) {
@@ -33,7 +32,7 @@ for (let char of string) {
     if (alphabet.indexOf(char) === -1) {
         correctCase = alphabet.toUpperCase();
     }
-    newIndex = correctCase.indexOf(char) + offset;
+    let newIndex = correctCase.indexOf(char) + offset;
     if (newIndex === -1 || newIndex === 26) {
         newIndex = newIndex - 26 * offset;
     }
