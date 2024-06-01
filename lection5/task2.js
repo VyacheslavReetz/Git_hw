@@ -25,8 +25,6 @@ while (i < 4 && result > 1024 ) {
 }
 
 switch (i) {
-    case 0: 
-        break;
     case 1: 
         units = 'Kb';
         break;
