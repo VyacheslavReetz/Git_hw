@@ -2,12 +2,15 @@
 //   и выводить в консоль количество гласных и согласных букв в этом слове. 
 //   Ответ должен выводиться шаблонным литералом вида word contains x vowels and y consonants
 
-const str = 'Kalabanga'; //слово
+const str = 'Kala-banga'; //слово
 const vowelsStr = 'aeiouy'; //гласные
 let vowels = 0;
 let consonants = 0;
 
 for (let char of str) {
+    if (char === '-') {
+        continue;
+    }
     if(vowelsStr.indexOf(char) > -1) {
         vowels++
       } else {
