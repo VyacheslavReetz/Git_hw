@@ -15,7 +15,7 @@ for (let char of str) {
     }
     if(vowelsStr.indexOf(char) > -1 || vowelsStr.toUpperCase().indexOf(char) > -1) {
         vowels++
-      } else if (consonantsStr.indexOf(char) > -1 || consonantsStr.toUpperCase().indexOf(char)) {
+      } else if (consonantsStr.indexOf(char) > -1 || consonantsStr.toUpperCase().indexOf(char) > -1) {
         consonants++
       }
 }
