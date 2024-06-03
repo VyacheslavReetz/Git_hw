@@ -4,6 +4,8 @@
 
 const str = 'Kala-banga'; //слово
 const vowelsStr = 'aeiouy'; //гласные
+const consonantsStr = 'bcdfghjklmnpqrstvwxyz'; //гласные
+
 let vowels = 0;
 let consonants = 0;
 
@@ -11,9 +13,9 @@ for (let char of str) {
     if (char === '-') {
         continue;
     }
-    if(vowelsStr.indexOf(char) > -1) {
+    if(vowelsStr.indexOf(char) > -1 || vowelsStr.toUpperCase().indexOf(char) > -1) {
         vowels++
-      } else {
+      } else if (consonantsStr.indexOf(char) > -1 || consonantsStr.toUpperCase().indexOf(char)) {
         consonants++
       }
 }
