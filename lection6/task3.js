@@ -29,7 +29,9 @@ function transformer(string) {  // работает и с верхним рег�
 
     for (let i = 0; i < charArray.length; i++) {
 
-        if (charArray[i] === charArray[i+1] ) {
+        if (charArray[i] === charArray[i+1] 
+            && (alphabet.indexOf(charArray[i]) !== -1 || alphabet.toUpperCase().indexOf(charArray[i]) !== -1)
+        ) {
             let correctCase = alphabet;
             if (alphabet.indexOf(charArray[i]) === -1) {
                 correctCase = alphabet.toUpperCase();
@@ -47,4 +49,4 @@ function transformer(string) {  // работает и с верхним рег�
     return charArray.join('');
 }
 
-console.log(transformer('aabc-ZZA'));
+console.log(transformer('aabc--ZZA'));
