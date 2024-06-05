@@ -46,18 +46,15 @@ console.log(longestWord('Caprichosa Diablo Peperonida cheeses hawai'));
 // 3. Напишите функцию, которая принимает на вход массив чисел, убирает из него дубликаты и возвращает массив с только уникальными значениями.
 
 function isMyNumbersUnique(myNumbers) {
-    let result = myNumbers;
-
-    result.sort(function (a, b) {
-        return a - b;
-    });
-
-    for (let i = 1; i < result.length; i++) {
-        if (result[i] === result[i-1]) {
-            result.splice(i, 1);
-            i--;
+    if (!Array.isArray(myNumbers) || myNumbers.length === 0) {
+        return null
+    }
+    const result = myNumbers.reduce((seenNumber, digit) => {
+        if (seenNumber.includes(digit)) {
+            return seenNumber;
         }
-    };
+        return [...seenNumber, digit];
+    }, []);
 
     return (result.length !== 0 ? result : null);
 }
@@ -67,10 +64,8 @@ console.log(isMyNumbersUnique([1, 3, 1, 8, 8, 22, 45, 1, 8, 44]));
 // 4. Написать функцию, которая принимает на вход слово и проверяет, является ли это слово палиндромом
 
 function palindrome(str) {
-    str = str.toLowerCase();
-    const result = (str.split('').reverse().join('') === str) ? `Палиндром` : 'Не палиндром';
-
-    return result;
+    return str.toLowerCase() === str.toLowerCase().split('').reverse().join('') 
+          ? `Палиндром` : 'Не палиндром';
   }
   
   console.log(palindrome('Abraka-akarba'));
