@@ -5,10 +5,8 @@
 
 function isMyPizzaUnique(myPizzas) {
     const competitorPizzas = ['Peperoni', 'CaprichosA', 'Diablo', '4 cheeses', 'hawaI'];
-    // competitorPizzas.forEach((element, index) => {
-    //     competitorPizzas.splice(index, 1, element.toLowerCase());
-    // });
     let result = [];
+
     myPizzas.forEach(element => {
         if (!competitorPizzas.join(',').toLowerCase().split(',').includes(element.toLowerCase())) {
             result.push(element);
@@ -39,7 +37,7 @@ function longestWord(string) {
         }
     };
 
-    return wordArray.join(', ');;
+    return wordArray.join(', ');
 }
 
 console.log(longestWord('Caprichosa Diablo Peperonida cheeses hawai'));
@@ -69,4 +67,4 @@ function palindrome(str) {
           ? `Палиндром` : 'Не палиндром';
   }
   
-  console.log(palindrome('Abraka-akarba'));
+console.log(palindrome('Abraka-akarba'));
