@@ -9,10 +9,10 @@ const consonantsStr = 'bcdfghjklmnpqrstvwxyz'; //согласные
 let vowels = 0;
 let consonants = 0;
 
-for (let char of str) {
-    if(vowelsStr.indexOf(char) > -1 || vowelsStr.toUpperCase().indexOf(char) > -1) {
+for (let char of str.toLowerCase()) {
+    if(vowelsStr.includes(char)) {
         vowels++
-      } else if (consonantsStr.indexOf(char) > -1 || consonantsStr.toUpperCase().indexOf(char) > -1) {
+      } else if (consonantsStr.includes(char)) {
         consonants++
       }
 }

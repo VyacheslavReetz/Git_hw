@@ -8,6 +8,9 @@
 // 8. Если такое имя сотрудника в массиве не найдется - вернуть null
 
 function getEmployeeInfo(name) {
+    if (typeof(name) !== 'string' || name.length === 0){
+        return null;
+    }
     const names = ['Salvador', 'Goga', 'Leonardo', 'Ibragim', 'Alex'];
     const payments = [100, 220, 15, 8800, 1000000];
     let result = [];
@@ -20,4 +23,4 @@ function getEmployeeInfo(name) {
     return (result.length !== 0 ? result : null);
 }
 
-console.log(getEmployeeInfo('Goga'));
+console.log(getEmployeeInfo(''));
