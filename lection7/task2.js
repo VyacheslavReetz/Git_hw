@@ -36,16 +36,6 @@ console.log(priceAgregator([
 // 3. Напишите функцию, которая принимает на вход массив слов и возвращает отсортированный массив по по следующему критерию: количество гласных букв.
 //   Массив должен быть отсортирован по возврастанию количества гласных букв в слове.
 
-// function sortByVowels(wordArray){
-//     const vowelsStr = 'aeiouy';
-//     wordArray.sort(function (a, b) {
-//         for (let i = 0; i < a.length; i++) {
-            
-//         }
-//         return b.length - a.length;
-//     });;
-// }
-
 function vowelsNum(word) {
     return /[aeiouy]/g.test(word) ? word.match(/[aeiouy]/g).length : 0
 };
