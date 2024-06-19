@@ -4,7 +4,7 @@
 
 function findMissingNumber(arr = []) {
     return arr.sort((a, b) => a - b).reduce((result, value, index, array) => {
-        let checker = array[index+1] - value;
+        const checker = array[index+1] - value;
         return (checker > 1 && checker !== NaN) ?  result = value + 1 : result
     }, 'Нет пропущенных значений');
 }
