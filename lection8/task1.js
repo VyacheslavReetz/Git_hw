@@ -8,8 +8,6 @@
 // 5. Создайте объект qa с полями name, age, salary и методом getInfo, который будет возвращать строку вида: 
 //    `Hello, my name is ${name}, i'm ${age} and my salary is ${salary}`. Значения в строке должны ссылаться на контекст ЭТОГО ОБЪЕКТА, без подмен.
 
-const { log } = require("console");
-
  const characters = [
     { 'name': 'Barney', 'age': 36 },
     { 'name': 'Fred', 'age': 40 },
