@@ -9,7 +9,7 @@ class Animal {
         place_of_origin
     ) {
         this.type = type;
-        this._color = color;
+        this.color = color;
         this.weight = weight;
         this.height = height;
         this.place_of_origin = place_of_origin;
@@ -34,7 +34,7 @@ class Animal {
     }
 }
 
-const capibara = new Animal('Капибара', 'белый', 33, 27, 'Удмуртия');
+const capibara = new Animal('Капибара', 'Белый', 33, 27, 'Удмуртия');
 
 // 2. В конструкторе класс должен принимать следующие параметры:     
 //   - type
