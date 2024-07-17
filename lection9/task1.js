@@ -21,13 +21,13 @@ class Animal {
     }
 
     get color() {
-        return `Цвет животного: ${this._color}`
+        return this._color
     }
 
     set color(color) {
         const rightColor = ['Красный', 'Черный', 'Белый', 'Синий'];
         if (rightColor.includes(color)) {
-            this._color = color;
+            return this._color = color;
         } else {
             throw new Error('Цвет не одобрен.')
         }
@@ -44,7 +44,7 @@ const capibara = new Animal('Капибара', 'белый', 33, 27, 'Удму�
 //   - place of origin
 
 // 3. Добавьте в класс метод: getInfo, который возвращает в строке полную информацию о животном (используйте шаблонные строки с `${}` синтаксисом)
-console.log(capibara.getInfo());
+console.log(`Цвет животного: ${capibara.getInfo()}`);
 
 // 4. Создайте геттер для поля color (get color), не забывая что при этом поле должно быть _color
 console.log(capibara.color);

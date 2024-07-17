@@ -75,13 +75,13 @@ class Zoo {
     }
 
     get address() {
-        return `Адрес зоопарка: ${this._address}`
+        return this._address
     }
     get title() {
-        return `Название зоопарка: ${this._title}`
+        return this._title
     }
     get ticketPrice() {
-        return `Цена билета: ${this._ticketPrice}`
+        return this._ticketPrice
     }
 
     set address(newAddress) {
