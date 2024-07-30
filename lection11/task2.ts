@@ -90,10 +90,12 @@ interface ICounter {
     [key: string]: number;
 }
 
-function resultBlock(value: string | number | boolean, result: ICounter) {
-    for (let key in result) {
-        if (key === typeof(value)) {
-            return result[key]++;
+function resultBlock(obj: ICustomObject, result: ICounter) {
+    for (let objKey of Object.values(obj)) {
+        for (let key in result) {
+            if (key === typeof(objKey)) {
+                result[key]++;
+            }
         }
     }
 
@@ -108,16 +110,13 @@ function typeCounter(obj: ICustomObject | Array<ICustomObject>) {
     }
 
     if(Array.isArray(obj)) {
-        for (let i of obj) {
-            for (let key in i) {
-                resultBlock(i[key], result)
-            }
+        for (let i in obj) {
+            resultBlock(obj[i], result)
         }
     } else {
-        for (let key in obj) {
-            resultBlock(obj[key], result)
-        }
+        resultBlock(obj, result)
     }
+    
     console.log(result);
 }
 
