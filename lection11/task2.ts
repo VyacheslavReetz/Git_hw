@@ -25,7 +25,7 @@ interface IEmployee {
     address?: IAddress
 }
 
-function isItEmployee(employee: object): employee is ItEmployee {
+function isItEmployee(employee: IEmployee | ItEmployee): employee is ItEmployee {
     return 'grade' in employee;
 }
 
