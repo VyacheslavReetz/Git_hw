@@ -34,7 +34,7 @@ class MyStorage<T extends ID> {
             const index = this.storage.map(obj => obj.id).indexOf(id);
             
             return callback(index);
-        } else throw new Error (`Object with id=${id} not found`);
+        } else throw new Error (`ID = ${id} does not exist`);
     }
 
     constructor(info?: T[]) {
