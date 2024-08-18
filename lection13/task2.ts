@@ -70,7 +70,7 @@ class MyStorage<T extends ID> {
     }
 
     getAll() {
-		return this.storage;
+        return this.storage;
 	}
 }
 
