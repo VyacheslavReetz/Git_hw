@@ -20,8 +20,7 @@ class MyStorage<T extends ID> {
     private storage: T[] = []
     
     private makeUniqueId(): number {
-        let newId = 1;
-        return this.storage.length === 0 ? newId : (Math.max(...this.storage.map(obj => obj.id)) + 1);
+        return this.storage.length === 0 ? 1 : (Math.max(...this.storage.map(obj => obj.id)) + 1);
     }
     private isIdExist(id: number) {
         return this.storage.map(obj => obj.id).includes(id);
