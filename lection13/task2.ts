@@ -71,7 +71,7 @@ class MyStorage<T extends ID> {
 
     getAll() {
         return this.storage;
-	}
+    }
 }
 
 interface IUser {
