@@ -17,7 +17,7 @@ interface ID {
 }
 
 class MyStorage<T extends ID> {
-    private storage: T[] = [];
+    private storage: T[] = []
     
     private makeUniqueId(): number {
         let newId = 1;
@@ -43,8 +43,8 @@ class MyStorage<T extends ID> {
         }
     }
 
-	add(info: T): void;
-	add(info: Omit<T, 'id'>): void;
+	add(info: T): void
+	add(info: Omit<T, 'id'>): void
     add(info: T | Omit<T, 'id'>): void {
         if ('id' in info && !this.isIdExist(info['id'])) {
             this.storage.push(info);
