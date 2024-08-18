@@ -43,8 +43,8 @@ class MyStorage<T extends ID> {
         }
     }
 
-	add(info: T): void
-	add(info: Omit<T, 'id'>): void
+    add(info: T): void
+    add(info: Omit<T, 'id'>): void
     add(info: T | Omit<T, 'id'>): void {
         if ('id' in info && !this.isIdExist(info['id'])) {
             this.storage.push(info);
