@@ -5,27 +5,20 @@
 //    Пример:
 //    map([1,2,3,4,5], callback) => [0,2,6,12,20]
 
-type Callback <T> = (val: T, index: number) => T;
+type Callback <T, P> = (val: T, index?: number, array?: readonly T[]) => P;
 
-function mapping<T> (arr: T[], callback: Callback<T>) : T[] {
-    const newArr: T[] = [];
+function mapping<T, P> (arr: T[], callback: Callback<T, P>) : P[] {
+    const newArr: P[] = [];
 
-    arr.forEach((element, index) => {
-        newArr.push(callback(element, index))
+    arr.forEach((element, index, arr) => {
+        newArr.push(callback(element, index, arr))
     });
 
     return newArr;
 }
 
-const functionCallback: Callback<number> = function (
-    value: number,
-    index: number
-): number {   
-    return value * index;
-}
-
 const testArray = [1,2,3,4,5];
-console.log(mapping(testArray, functionCallback));
+console.log(mapping(testArray, (element, index: any) => element * index));
 
 
 
@@ -42,14 +35,13 @@ type arrOfArrays<T> = [
     arg2: T
 ][]
 
-function generateObject<T>(array: arrOfArrays<T>): Object {
-    const resultObj: {[key: string]: T} = {};
+type resultObject<T> = {[key: string]: T}
 
-    array.forEach(element => {
-        resultObj[element[0]] = element[1];
-    });
+function generateObject<T>(array: arrOfArrays<T>): resultObject<T> {
+    const resultObj: resultObject<T> = {};
 
-    return resultObj;
+    // only with es2019
+    return Object.fromEntries(array); 
 }
 
 //   Пример:
