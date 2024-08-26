@@ -26,15 +26,13 @@ class MyStorage<T extends ID> {
         return this.storage.map(obj => obj.id).includes(id);
     }
     private findEntityIndex(id: number): number {
-        return this.storage.map(obj => obj.id).indexOf(id);
-    }    
-    private validateId(
-        id: number
-    ): number {
-        if (this.isIdExist(id)) {
-            return this.findEntityIndex(id);
+        const idx = this.storage.findIndex(obj => obj.id === id);
+        if ( idx !== -1) {
+            return idx            
         } else throw new Error (`ID = ${id} does not exist`);
-    }
+
+        // else throw error
+     }
 
     constructor(info?: T[]) {
         if (info) {
@@ -57,22 +55,19 @@ class MyStorage<T extends ID> {
     }
 
     update(info: T): void {
-        const callback = (index: number) => 
-            this.storage[index] = {...this.storage[index], ...info};
-
-        callback(this.validateId(info.id));
-    }
+        const index = this.findEntityIndex(info.id);
+        this.storage[index] = { ...this.storage[index], ...info };
+    };
 
     remove(id: number): void {
-        const callback = (index: number) => this.storage.splice(index, 1);
-
-        callback(this.validateId(id));
+        const index = this.findEntityIndex(id);
+        this.storage.splice(index, 1);
     }
 
     getById(id: number): T {
-        const callback = (index: number) => this.storage[index];
+        const index = this.findEntityIndex(id);
 
-        return callback(this.validateId(id));
+        return this.storage[index];
     }
 
     getAll() {
